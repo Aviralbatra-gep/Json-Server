@@ -1,0 +1,430 @@
+studentschema = {
+
+    "$schema": "http://json-schema.org/draft-04/schema#",
+
+    "type": "object",
+
+    "properties": {
+
+        "StudentDetails": {
+
+            "type": "array",
+
+            "items": [
+
+                {
+
+                    "type": "object",
+
+                    "properties": {
+
+                        "name": {
+
+                            "type": "string"
+
+                        },
+
+                        "marks": {
+
+                            "type": "array",
+
+                            "items": [
+
+                                {
+
+                                    "type": "object",
+
+                                    "properties": {
+
+                                        "maths": {
+
+                                            "type": "array",
+
+                                            "items": [
+
+                                                {
+
+                                                    "type": "object",
+
+                                                    "properties": {
+
+                                                        "statists": {
+
+                                                            "type": "string"
+
+                                                        },
+
+                                                        "algebra": {
+
+                                                            "type": "string"
+
+                                                        }
+
+                                                    },
+
+                                                    "required": [
+
+                                                        "statists",
+
+                                                        "algebra"
+
+                                                    ]
+
+                                                }
+
+                                            ]
+
+                                        },
+
+                                        "English": {
+
+                                            "type": "array",
+
+                                            "items": [
+
+                                                {
+
+                                                    "type": "object",
+
+                                                    "properties": {
+
+                                                        "grammar": {
+
+                                                            "type": "string"
+
+                                                        },
+
+                                                        "other": {
+
+                                                            "type": "array",
+
+                                                            "items": [
+
+                                                                {
+
+                                                                    "type": "object",
+
+                                                                    "properties": {
+
+                                                                        "speech": {
+
+                                                                            "type": "string"
+
+                                                                        }
+
+                                                                    },
+
+                                                                    "required": [
+
+                                                                        "speech"
+
+                                                                    ]
+
+                                                                }
+
+                                                            ]
+
+                                                        }
+
+                                                    },
+
+                                                    "required": [
+
+                                                        "grammar",
+
+                                                        "other"
+
+                                                    ]
+
+                                                }
+
+                                            ]
+
+                                        }
+
+                                    },
+
+                                    "required": [
+
+                                        "maths",
+
+                                        "English"
+
+                                    ]
+
+                                }
+
+                            ]
+
+                        }
+
+                    },
+
+                    "required": [
+
+                        "name",
+
+                        "marks"
+
+                    ]
+
+                },
+
+                {
+
+                    "type": "object",
+
+                    "properties": {
+
+                        "name": {
+
+                            "type": "string"
+
+                        },
+
+                        "marks": {
+
+                            "type": "array",
+
+                            "items": [
+
+                                {
+
+                                    "type": "object"
+
+                                }
+
+                            ]
+
+                        }
+
+                    },
+
+                    "required": [
+
+                        "name",
+
+                        "marks"
+
+                    ]
+
+                },
+
+                {
+
+                    "type": "object",
+
+                    "properties": {
+
+                        "name": {
+
+                            "type": "string"
+
+                        },
+
+                        "marks": {
+
+                            "type": "array",
+
+                            "items": [
+
+                                {
+
+                                    "type": "object",
+
+                                    "properties": {
+
+                                        "English": {
+
+                                            "type": "array",
+
+                                            "items": [
+
+                                                {
+
+                                                    "type": "object",
+
+                                                    "properties": {
+
+                                                        "grammar": {
+
+                                                            "type": "string"
+
+                                                        }
+
+                                                    },
+
+                                                    "required": [
+
+                                                        "grammar"
+
+                                                    ]
+
+                                                }
+
+                                            ]
+
+                                        }
+
+                                    },
+
+                                    "required": [
+
+                                        "English"
+
+                                    ]
+
+                                }
+
+                            ]
+
+                        }
+
+                    },
+
+                    "required": [
+
+                        "name",
+
+                        "marks"
+
+                    ]
+
+                }
+
+            ]
+
+        }
+
+    },
+
+    "required": [
+
+        "StudentDetails"
+
+    ]
+
+}
+
+
+
+
+student = {
+    "StudentDetails": [{
+        "name": "John",
+        "marks": [{
+            "maths": [{
+                "statists": "70",
+                "algebra": "80"
+            }],
+            "English": [{
+                "grammar": "90",
+                "other": [{
+                    "speech": "80%"
+                }]
+            }]
+        }]
+    },
+        {
+        "name": "Teena",
+        "marks": [{}]
+    },
+        {
+        "name": "Roy",
+        "marks": [{
+            "English": [{
+                "grammar": "90"
+            }]
+        }]
+    }]
+}
+
+
+
+
+
+otherschema = {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "productId": {
+            "type": "integer"
+        },
+        "productName": {
+            "type": "string"
+        },
+        "price": {
+            "type": "number"
+        },
+        "tags": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "string"
+                }
+            ]
+        },
+        "dimensions": {
+            "type": "object",
+            "properties": {
+                "length": {
+                    "type": "number"
+                },
+                "width": {
+                    "type": "number"
+                },
+                "height": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "length",
+                "width",
+                "height"
+            ]
+        },
+        "warehouseLocation": {
+            "type": "object",
+            "properties": {
+                "latitude": {
+                    "type": "number"
+                },
+                "longitude": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "latitude",
+                "longitude"
+            ]
+        }
+    },
+    "required": [
+        "productId",
+        "productName",
+        "price",
+        "tags",
+        "dimensions",
+        "warehouseLocation"
+    ]
+}
+
+
+other = {
+    "productId": 1,
+    "productName": "An ice sculpture",
+    "price": 12.50,
+    "tags": ["cold", "ice"],
+    "dimensions": {
+        "length": 7.0,
+        "width": 12.0,
+        "height": 9.5
+    },
+    "warehouseLocation": {
+        "latitude": -78.75,
+        "longitude": 20.4
+    }
+}
